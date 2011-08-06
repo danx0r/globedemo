@@ -1,0 +1,436 @@
+* {
+	padding:0px;
+	margin: 2px;
+	
+}
+
+body {
+	
+	height: 100%;
+	padding: 20px;
+	background-color: #f4f4f4;
+	font: 10px Helvetica, Arial, sans-serif;
+  
+}
+
+.search {
+	
+	background-color: #53d4f5;
+	border:none;
+	padding:0px;
+	
+}
+
+#page {
+	
+	margin: 0 auto;
+	min-height: 100%;
+	padding: 0;
+	position: relative;
+}
+
+#chart {
+	width:100%;
+	margin: 0 auto;
+}
+
+
+.rule line {
+  stroke: #eee;
+	stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+.rule line.axis {
+  stroke: #000;
+stroke-width: 1px;
+}
+
+.area {
+  fill: #fecd09;
+}
+
+circle {
+	
+}
+
+circle.area {
+  fill: none;
+  stroke: none;
+  }
+
+circle.area {
+  fill: #fff;
+}
+
+line {
+	stroke-width: 2;
+	cursor: move;
+	stroke: #000;
+}
+
+rect {
+	fill: #f4f4f4;
+  fill-opacity: .9;
+}
+
+rect.back {
+	fill: #fff;
+  fill-opacity: .7;
+}
+
+
+
+
+textarea, input[type="text"], input[type="password"], input[type="file"], input[type="button"], input[type="submit"], input[type="reset"], select {
+    background-color: #fff;
+    border: 1px solid #bbbbbb;
+    color: #000;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+	outline: none;
+}
+
+textarea, input[type="text"] {
+
+	padding: 4px 4px ;
+	font-size:12px;
+
+	
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], select {
+    border: 1px solid #bbbbbb;
+    color: #000;
+    cursor: pointer;
+    padding: 6px 7px ;
+
+	height: auto;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+ 	background: #F2F2F2 url("images/white-grad.png") repeat-x scroll 0% 0%;
+    text-shadow: white 0px 1px 0px;
+}
+
+
+input[type="button"]:hover,
+a.button:hover,
+button:hover {
+    border-color: #999999;
+
+}
+
+
+input[type="button"]:active,
+a.button:hover,
+button:hover {
+	background: #fff;
+}
+
+
+
+input[type="text"].query {
+	font-size:10px;
+	font-family: "Monaco";
+	border: 0px solid #bbbbbb;
+	width : 100%;
+	color: #888;
+	background-color: #f0f0f0;	
+}
+
+.filter, .stats {
+	
+	-moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+}
+
+div.count {
+	font-size:12px;
+	font-weight:bold;
+	float:right;
+	border: 0px solid #bbbbbb;
+	color: #222;
+	width: auto;
+	padding: 6px 7px ;
+	background:#dddddd;	
+}
+
+div.null {
+	font-size:12px;
+	font-width:bold;
+	border: 0px solid #bbbbbb;
+	color: #f4f4f4;
+	width: auto;	
+		padding: 6px 7px ;
+		float:right;
+	background:#f00;	
+}
+
+.filter.container {
+	background-color: #ececec;
+}
+
+.filter.value {
+	float:left;
+	font-size: 11px;
+	margin-left:0px;
+	border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+	-moz-border-radius: 0px 4px 4px 0px;
+	padding: 6px 5px ;
+	width:100%;
+	     -moz-box-sizing: border-box;
+	     -ms-box-sizing: border-box;
+	     -webkit-box-sizing: border-box;
+	     box-sizing: border-box;
+    
+}
+
+.filter.title {
+	font-size: 11px;
+	font-weight: bold;
+	float:left;
+	-moz-border-radius: 4px 0px 0px 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+	margin-right:0px;
+	border-right:0px;
+	width:100px;
+	text-align:left;
+}
+
+.stats.title {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.stats.filters {
+	
+	clear:both;
+	
+}
+
+.filter.handle {
+	
+	height:60px;
+	width: 5px;
+	padding:0;
+	background-color:#aaa;
+	-moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+	cursor:move;
+	float:left;
+}
+
+.filter.refresh {
+	float:left;
+	padding:5px;
+	font-size:12px;
+	cursor:pointer;
+	
+}
+
+.query {
+	display:none;
+}
+
+
+
+.right {
+	margin-left:107px;
+}
+
+.left {
+	float:left;
+	width:95px;
+	margin:0px;
+}
+
+
+.compass .back {
+  fill: #eee;
+  fill-opacity: .8;
+}
+
+.compass .fore {
+  stroke: #999;
+  stroke-width: 1.5px;
+}
+
+.compass rect.back.fore {
+  fill: #999;
+  fill-opacity: .3;
+  stroke: #eee;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+
+.compass .direction {
+  fill: none;
+}
+
+.compass .chevron {
+  fill: none;
+  stroke: #999;
+  stroke-width: 5px;
+}
+
+.compass .zoom .chevron {
+  stroke-width: 4px;
+}
+
+.compass .active .chevron, .compass .chevron.active {
+  stroke: #fff;
+}
+
+.compass.active .active .direction {
+  fill: #999;
+}
+
+
+.layer circle {
+  fill-opacity: .6;
+  stroke-opacity:0;
+  stroke: #000;
+  vector-effect: non-scaling-stroke;
+}
+
+
+
+	tr.odd {
+
+		background-color:#fff;
+	}
+
+	tr.even {
+
+		background-color:#f1f1f1;
+	}
+
+	td, th {
+
+		padding: 4px;
+	}
+
+	th {
+		background-color:#eee;
+		cursor: pointer;
+
+	}
+
+	th.sorting_asc, th.sorting_desc {
+		background-color:#ccc;
+
+	}
+
+	.paginate_button, .paginate_active {
+
+		padding: 4px;
+		background-color:#eee;
+		cursor: pointer;
+		margin: 2px;
+
+	}
+
+	.paginate_button:hover {
+		background-color:#ccc;
+
+	}
+
+	.paginate_active {
+		background-color:#ccc;
+	}
+
+	.dataTables_info {
+		padding: 4px;
+		margin: 2px;
+
+	}
+	
+#maplink,#net {
+	
+	width:100%;
+	height: 30px;
+	background-color:#eee;
+	
+}
+
+circle.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+line.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+.close {
+	font-size:12px;
+	cursor:pointer;
+	float:right;
+	font-weight:bold;
+}
+
+.remove {
+	float:left;
+	
+}
+
+#letters {
+	
+	width:100%;
+}
+
+
+.windowtitle {
+	
+	font-size:16px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+
+.ajaxloading {
+	
+	height:20px;
+	width:20px;
+	float:right;
+	
+}
+
+#DOMWindowOverlay, .dataTables_wrapper{
+	margin:0px;
+}
+
+#colorPicker {
+	clear:both;
+	float:left;
+}
+
+.rounded {
+	-moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+#mColorPicker * {
+	margin: 0px;
+}

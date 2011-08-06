@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Corrispondenza | Basic Stats</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="style/test.css"> 
+	<link rel="stylesheet" href="js/jquery/themes/base/jquery.ui.all.css"> 
+
+    <!-- webgl globe viewer -->
+    <script type="text/javascript" src="third-party/Three/ThreeWebGL.js"></script>
+    <script type="text/javascript" src="third-party/Three/ThreeExtras.js"></script>
+    <script type="text/javascript" src="third-party/Three/RequestAnimationFrame.js"></script>
+    <script type="text/javascript" src="third-party/Three/Detector.js"></script>
+    <script type="text/javascript" src="globe.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        
+    </div>
+    <script>
+        var container = document.getElementById("container");        
+        var globe = DAT.Globe(container, function(label){
+            return new THREE.Color([0xac3f52][label]);
+        });
+        var colors=1;
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', '../data/api.py?action=globe', true);
+        xhr.onreadystatechange = function(e){
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    data = data.result;
+                    console.log("DEBUG globe data:", data.length);                    
+                    window.data = data;
+                    globe.addData(data, {
+                        format: 'legend'
+                    });
+                    globe.createPoints();
+                    globe.animate();
+                }
+                else {
+                    console.log("bad status:", xhr.status);
+                }
+            }
+        };
+        xhr.send(null);
+    </script>
+</body>
+</html>
